@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Empresa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Barra superior -->
+    <header class="barra-superior">
+        <button id="botonMenu" class="boton-menu">☰</button>
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h2 class="logo" id="logoEmpresa">Empresa</h2>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#inicio" onclick="mostrarSeccion('#inicio')">🏠 <span class="texto-menu">Inicio</span></a></li>
+                <li><a href="#clientes" onclick="mostrarSeccion('#clientes')">👥 <span class="texto-menu">Clientes</span></a></li>
+                <li><a href="#reservas" onclick="mostrarSeccion('#reservas')">📅 <span class="texto-menu">Reservas</span></a></li>
+                <li><a href="#productos" onclick="mostrarSeccion('#productos')">🛒 <span class="texto-menu">Productos</span></a></li>
+                <li><a href="#contacto" onclick="mostrarSeccion('#contacto')">📞 <span class="texto-menu">Contacto</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="contenido">
+        <main>
+            <section id="inicio" class="seccion">
+                <h1>Bienvenido a Nuestra Empresa</h1>
+                <p>Descripción breve editable del negocio.</p>
+            </section>
+
+            <section id="clientes" class="seccion">
+                <h2>Clientes</h2>
+                <form id="formCliente">
+                    <input type="text" id="nombreCliente" placeholder="Nombre del Cliente" required>
+                    <input type="tel" id="telefonoCliente" placeholder="Teléfono" required>
+                    <input type="email" id="emailCliente" placeholder="Email" required>
+                    <button type="submit">Agregar Cliente</button>
+                </form>
+                <div id="listaClientes"></div>
+            </section>
+
+            <section id="reservas" class="seccion">
+                <h2>Reservas</h2>
+                <form id="formReserva">
+                    <input type="text" id="clienteReserva" placeholder="Nombre del Cliente" required>
+                    <input type="date" id="fechaReserva" required>
+                    <input type="time" id="horaReserva" required>
+                    <input type="text" id="servicioReserva" placeholder="Servicio/Product" required>
+                    <button type="submit">Agregar Reserva</button>
+                </form>
+                <div id="listaReservas"></div>
+            </section>
+
+            <section id="productos" class="seccion">
+                <h2>Productos / Servicios</h2>
+                <div id="listaProductos"></div>
+            </section>
+
+            <section id="contacto" class="seccion">
+                <h2>Contacto</h2>
+                <p>Teléfono: (editable)</p>
+                <p>Email: (editable)</p>
+                <p>Dirección: (editable)</p>
+            </section>
+        </main>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+/* 🎨 VARIABLES DE COLOR */
+:root {
+    --color-principal: #ffffff;
+    --color-secundario: #f4f4f4;
+    --color-acento: #4CAF50;
+    --color-texto: #333333;
+    --color-hover: #e0e0e0;
+}
+
+/* 🔄 RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 💻 CUERPO GENERAL */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 🚀 BARRA SUPERIOR */
+.barra-superior {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-principal);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    z-index: 1002;
+}
+
+/* ☰ BOTÓN MENÚ */
+.boton-menu {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 22px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 📚 SIDEBAR LATERAL */
+.sidebar {
+    width: 220px;
+    background-color: var(--color-principal);
+    border-right: 1px solid #ddd;
+    padding: 70px 20px 20px 20px; /* espacio para la barra superior */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+    z-index: 1000;
+}
+
+/* 🧩 SIDEBAR CERRADA */
+.sidebar.cerrada {
+    width: 60px;
+}
+
+/* Cuando sidebar está cerrada, los enlaces son botones pequeños y centrados */
+.sidebar.cerrada .navbar a {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 20px auto;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Fondo transparente normal */
+    padding: 0;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    
+}
+
+/* Hover solo rodeando al ícono */
+.sidebar.cerrada .navbar a:hover {
+    background-color: var(--color-hover);
+}
+
+
+/* 🧠 LOGO DEL SISTEMA */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    transition: opacity 0.3s ease;
+}
+
+/* Ocultar logo cuando sidebar está cerrada */
+.sidebar.cerrada .logo {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 📋 NAVBAR ENLACES */
+.navbar ul {
+    list-style: none;
+}
+
+.navbar li {
+    margin-bottom: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s, padding-left 0.3s, color 0.3s;
+    padding: 8px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+/* ✅ SECCIÓN ACTIVA EN EL MENÚ */
+.navbar a.activo {
+    background-color: var(--color-acento);
+    color: white;
+}
+
+/* Mostrar solo el botón ☰ cuando la sidebar está cerrada */
+.sidebar.cerrada .boton-menu {
+    display: block;
+}
+
+
+/* ✨ EFECTO HOVER EN LINKS */
+.navbar a:hover {
+    background-color: var(--color-hover);
+    padding-left: 16px;
+}
+
+/* 📖 TEXTOS DEL MENÚ */
+.texto-menu {
+    margin-left: 8px;
+    transition: opacity 0.3s ease;
+}
+
+/* Ocultar textos del menú cuando sidebar está cerrada */
+.sidebar.cerrada .texto-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* 📦 CONTENIDO PRINCIPAL */
+.contenido {
+    margin-left: 220px;
+    padding: 80px 30px 30px 30px; /* espacio por barra superior */
+    flex: 1;
+    transition: margin-left 0.3s ease;
+}
+
+/* Ajuste si la sidebar está cerrada */
+.sidebar.cerrada + .contenido {
+    margin-left: 60px;
+}
+
+/* 📑 SECCIONES */
+.seccion {
+    background-color: var(--color-principal);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* ✨ CLASE PARA MOSTRAR LA SECCIÓN */
+.seccion.mostrar {
+    opacity: 1;
+}
+
+/* 📝 FORMULARIOS */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input, form button {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: var(--color-acento);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* 📋 LISTAS DINÁMICAS */
+#listaClientes, #listaReservas, #listaProductos {
+    margin-top: 20px;
+}
+
+.item-lista {
+    background-color: var(--color-secundario);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+    }
+
+    .sidebar.cerrada {
+        width: 0;
+    }
+
+    .contenido {
+        margin-left: 180px;
+    }
+
+    .sidebar.cerrada + .contenido {
+        margin-left: 0;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .contenido {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+
+    .boton-menu {
+        top: 10px;
+        left: 10px;
+    }
+}
