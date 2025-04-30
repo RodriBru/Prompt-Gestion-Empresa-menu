@@ -156,12 +156,44 @@ body {
     visibility: hidden;
 }
 
+
+/* 🔽 SUBMENÚ */
+.submenu {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.submenu a {
+    font-size: 14px;
+    color: var(--color-texto);
+    text-decoration: none;
+    padding: 5px;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.submenu a:hover {
+    background-color: var(--color-hover);
+    border-radius: 5px;
+}
+
+
+
+/* 📦 CONTENIDO PRINCIPAL */
 /* 📦 CONTENIDO PRINCIPAL */
 .contenido {
     margin-left: 220px;
-    padding: 80px 30px 30px 30px; /* espacio por barra superior */
+    padding: 80px 30px 30px 30px;
     flex: 1;
     transition: margin-left 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 /* Ajuste si la sidebar está cerrada */
@@ -171,17 +203,21 @@ body {
 
 /* 📑 SECCIONES */
 .seccion {
+    display: none;
+    opacity: 0;
     background-color: var(--color-principal);
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    opacity: 0;
     transition: opacity 0.4s ease;
+    position: relative;
+    z-index: 2;
 }
 
 /* ✨ CLASE PARA MOSTRAR LA SECCIÓN */
 .seccion.mostrar {
+    display: block;
     opacity: 1;
 }
 
