@@ -261,46 +261,65 @@ form button:hover {
 /* 📱 RESPONSIVE */
 @media (max-width: 768px) {
     .sidebar {
-        width: 180px;
+      width: 180px;
+      position: fixed;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-right: 1px solid #ddd;
+      border-bottom: none;
+      z-index: 1000;
+      background-color: var(--color-principal);
     }
-
+  
     .sidebar.cerrada {
-        width: 0;
+      width: 0;
     }
-
+  
     .contenido {
-        margin-left: 180px;
+      margin-left: 180px;
     }
-
+  
     .sidebar.cerrada + .contenido {
-        margin-left: 0;
+      margin-left: 0;
     }
-
+  
     .navbar a {
-        font-size: 16px;
+      font-size: 16px;
     }
-}
-
-@media (max-width: 480px) {
-    body {
-        flex-direction: column;
-    }
-
+  }
+  
+  @media (max-width: 480px) {
+    /* mantenemos el mismo estilo que en 768px para mantener el sidebar */
     .sidebar {
-        position: relative;
-        width: 100%;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid #ddd;
+      width: 180px;
+      position: fixed;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-right: 1px solid #ddd;
+      border-bottom: none;
+      z-index: 1000;
+      background-color: var(--color-principal);
     }
-
+  
+    .sidebar.cerrada {
+      width: 0;
+    }
+  
     .contenido {
-        margin-left: 0;
-        padding-top: 60px;
+      margin-left: 180px;
+      padding-top: 60px;
     }
-
+  
+    .sidebar.cerrada + .contenido {
+      margin-left: 0;
+    }
+  
     .boton-menu {
-        top: 10px;
-        left: 10px;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1001;
     }
-}
+  }
