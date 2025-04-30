@@ -194,3 +194,27 @@ function toggleSidebar() {
 
 // ✅ Activamos el botón menú
 document.querySelector('#botonMenu').addEventListener('click', toggleSidebar);
+
+
+// 🔽 Función que se activa al hacer clic en un enlace del menú principal
+function toggleSubmenu(event, link) {
+    event.preventDefault(); // Evita que el enlace navegue o salte a otra sección
+
+    const submenu = link.nextElementSibling; // Obtiene el <ul> submenu que está justo después del enlace clickeado
+
+    // 🔒 Cierra todos los submenús visibles que no sean el actual
+    document.querySelectorAll('.submenu').forEach(ul => {
+        if (ul !== submenu) ul.style.display = 'none'; // Oculta todos los demás submenús
+    });
+
+    // 🔁 Alterna la visibilidad del submenú actual
+    if (submenu.style.display === 'block') {
+        // Si está abierto, lo cierra
+        submenu.style.display = 'none';
+    } else {
+        // Si está cerrado, lo abre
+        submenu.style.display = 'block';
+    }
+}
+
+
