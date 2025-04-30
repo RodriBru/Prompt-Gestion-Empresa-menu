@@ -13,19 +13,61 @@
         <button id="botonMenu" class="boton-menu">☰</button>
     </header>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <h2 class="logo" id="logoEmpresa">Empresa</h2>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#inicio" onclick="mostrarSeccion('#inicio')">🏠 <span class="texto-menu">Inicio</span></a></li>
-                <li><a href="#clientes" onclick="mostrarSeccion('#clientes')">👥 <span class="texto-menu">Clientes</span></a></li>
-                <li><a href="#reservas" onclick="mostrarSeccion('#reservas')">📅 <span class="texto-menu">Reservas</span></a></li>
-                <li><a href="#productos" onclick="mostrarSeccion('#productos')">🛒 <span class="texto-menu">Productos</span></a></li>
-                <li><a href="#contacto" onclick="mostrarSeccion('#contacto')">📞 <span class="texto-menu">Contacto</span></a></li>
-            </ul>
-        </nav>
-    </div>
+
+
+
+
+   <!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <h2 class="logo" id="logoEmpresa">Empresa</h2>
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="#inicio" onclick="toggleSubmenu(event, this); mostrarSeccion('#inicio')">🏠 <span class="texto-menu">Inicio</span></a>
+        <ul class="submenu">
+          <li><a href="#inicio-dato1" onclick="mostrarSeccion('#inicio-dato1')">📌 Dato 1</a></li>
+          <li><a href="#inicio-dato2" onclick="mostrarSeccion('#inicio-dato2')">📌 Dato 2</a></li>
+          <li><a href="#inicio-dato3" onclick="mostrarSeccion('#inicio-dato3')">📌 Dato 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#clientes" onclick="toggleSubmenu(event, this); mostrarSeccion('#clientes')">👥 <span class="texto-menu">Clientes</span></a>
+        <ul class="submenu">
+          <li><a href="#clientes-dato1" onclick="mostrarSeccion('#clientes-dato1')">📌 Dato 1</a></li>
+          <li><a href="#clientes-dato2" onclick="mostrarSeccion('#clientes-dato2')">📌 Dato 2</a></li>
+          <li><a href="#clientes-dato3" onclick="mostrarSeccion('#clientes-dato3')">📌 Dato 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#reservas" onclick="toggleSubmenu(event, this); mostrarSeccion('#reservas')">📅 <span class="texto-menu">Reservas</span></a>
+        <ul class="submenu">
+          <li><a href="#reservas-dato1" onclick="mostrarSeccion('#reservas-dato1')">📌 Dato 1</a></li>
+          <li><a href="#reservas-dato2" onclick="mostrarSeccion('#reservas-dato2')">📌 Dato 2</a></li>
+          <li><a href="#reservas-dato3" onclick="mostrarSeccion('#reservas-dato3')">📌 Dato 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#productos" onclick="toggleSubmenu(event, this); mostrarSeccion('#productos')">🛒 <span class="texto-menu">Productos</span></a>
+        <ul class="submenu">
+          <li><a href="#productos-dato1" onclick="mostrarSeccion('#productos-dato1')">📌 Dato 1</a></li>
+          <li><a href="#productos-dato2" onclick="mostrarSeccion('#productos-dato2')">📌 Dato 2</a></li>
+          <li><a href="#productos-dato3" onclick="mostrarSeccion('#productos-dato3')">📌 Dato 3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#contacto" onclick="toggleSubmenu(event, this); mostrarSeccion('#contacto')">📞 <span class="texto-menu">Contacto</span></a>
+        <ul class="submenu">
+          <li><a href="#contacto-dato1" onclick="mostrarSeccion('#contacto-dato1')">📌 Dato 1</a></li>
+          <li><a href="#contacto-dato2" onclick="mostrarSeccion('#contacto-dato2')">📌 Dato 2</a></li>
+          <li><a href="#contacto-dato3" onclick="mostrarSeccion('#contacto-dato3')">📌 Dato 3</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+
 
     <!-- Contenido principal -->
     <div class="contenido">
@@ -34,6 +76,24 @@
                 <h1>Bienvenido a Nuestra Empresa</h1>
                 <p>Descripción breve editable del negocio.</p>
             </section>
+
+
+            <section id="inicio-dato1" class="seccion">
+                <h2>Inicio - Dato 1</h2>
+                <p>Contenido genérico para esta subsección.</p>
+              </section>
+              
+              <section id="inicio-dato2" class="seccion">
+                <h2>Inicio - Dato 2</h2> <!-- esto estaba mal, repetía "Dato 1" -->
+                <p>Contenido genérico para esta subsección.</p>
+              </section>
+              
+              <section id="inicio-dato3" class="seccion">
+                <h2>Inicio - Dato 3</h2>
+                <p>Contenido genérico para esta subsección.</p>
+              </section>
+
+
 
             <section id="clientes" class="seccion">
                 <h2>Clientes</h2>
